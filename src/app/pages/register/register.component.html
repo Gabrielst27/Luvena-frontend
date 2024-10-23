@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="form-container">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <h2>Cadastro</h2>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" formControlName="nome" class="form-control" />
+        <div *ngIf="clientForm.get('nome')?.invalid && clientForm.get('nome')?.touched" class="text-danger">
+          O nome é obrigatório.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" class="form-control" />
+        <div *ngIf="clientForm.get('email')?.invalid && clientForm.get('email')?.touched" class="text-danger">
+          Insira um e-mail válido (Ex: usuário&#64;gmail.com).
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input 
+          type="text"
+          id="telefone"
+          formControlName="telefone"
+          class="form-control"
+          maxlength="11" minlength="11"
+          placeholder="Apenas números" />
+        <div *ngIf="clientForm.get('telefone')?.invalid && clientForm.get('telefone')?.touched" class="text-danger">
+          O telefone é obrigatório e deve ter 11 caracteres (11988887777).
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input
+          type="text"
+          id="senha"
+          formControlName="senha"
+          class="form-control" />
+        <div *ngIf="clientForm.get('senha')?.invalid && clientForm.get('senha')?.touched" class="text-danger">
+          Informe a senha.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmarSenha">Confirme a senha:</label>
+        <input
+          type="text"
+          id="confirmarSenha"
+          formControlName="confirmarSenha"
+          class="form-control" />
+        <div *ngIf="clientForm.get('confirmarSenha')?.invalid 
+            && clientForm.get('confirmarSenha')?.touched 
+            && clientForm.get('confirmarSenha') !== clientForm.get('senha')" 
+            class="text-danger">
+            A senha é diferente da senha informada.
+        </div>
+      </div>
+      
+      <div class="btn-container">
+        <button class="btn" id="btn-voltar" (click)="onBackButton()">Voltar</button>
+        <button class="btn" id="btn-cadastrar" type="submit">Cadastrar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert-container">
+    <div *ngIf="mensagem" class="alert alert-success mt-3">
+      {{ mensagem }}
+    </div>
+  </div>
+</div>
