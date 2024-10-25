@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,11 +21,20 @@ export class RegisterComponent {
       telefone: ['', Validators.required],
       senha: ['', Validators.required],
       confirmarSenha:  ['', Validators.required]
-    });
+    }, { validator: this.passwordMatchValidator });
   }
 
   onBackButton(){
     this.router.navigate(['/home']);
+  }
+
+  passwordMatchValidator(form: AbstractControl): { [key: string]: boolean } | null {
+    const senha = form.get('senha')?.value;
+    const confirmarSenha = form.get('confirmarSenha')?.value;
+    if (senha !== confirmarSenha) {
+      return { 'mismatch': true };
+    }
+    return null;
   }
 
   onSubmit() {
@@ -35,7 +44,7 @@ export class RegisterComponent {
       
       setTimeout(() => {
         this.router.navigate(['home']);
-      }, 2500);
+      }, 700);
     }
     if (!this.clientForm.valid) {
       this.mensagem = 'Preencha todos os dados corretamente' 

@@ -1,0 +1,60 @@
+.navbar,
+.menu,
+.menu li {
+    margin: 0 !important; /* Força a remoção de margens */
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais da navbar */
+.navbar {
+    margin: 0;
+    background-color: rgba(0,0,0,0.7); /* Cor de fundo */
+    padding: 10px 20px; /* Espaçamento interno */
+}
+
+/* Estilos da lista do menu */
+.menu {
+    list-style-type: none; /* Remove marcadores */
+    margin: 0; /* Remove margem */
+    padding: 0px; /* Remove preenchimento */
+    display: flex; /* Exibe os itens em linha */
+}
+
+/* Estilos dos itens do menu */
+.menu li {
+    padding: 40px;
+    margin-right: 20px; /* Espaçamento entre os itens */
+}
+
+/* Estilos dos links do menu */
+.menu a {
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave para hover */
+}
+
+/* Efeito hover */
+.menu a:hover {
+    background-color: #B79145; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo do link ativo (opcional) */
+.menu a.active {
+    background-color: #007bff; /* Cor de fundo do item ativo */
+}
+
+button{
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    height: 45px;
+    width: 90px;
+}
