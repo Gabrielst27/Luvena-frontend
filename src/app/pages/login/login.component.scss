@@ -1,0 +1,156 @@
+.container {
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 30px;
+    background-color: rgba(236, 236, 236, 0.98);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgb(255, 0, 234);
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(43, 0, 255);
+    
+}
+
+.btn-container{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+
+    
+}
+
+.alert-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 3px solid rgb(0, 255, 38);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+
+    border: 3px solid rgb(0, 217, 255);
+    
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+    border: 3px solid rgb(255, 208, 0);
+}
+
+.form-control{
+    width: 350px;
+    height: 5px;
+    padding: 15px;
+    border: 0;
+    border-radius: 30px;
+    background-color: rgba(175, 175, 175, 0.7);
+
+    
+    border: 3px solid rgb(90, 36, 238);
+    
+    font-size: 11pt;
+
+      &:focus {
+        outline: none; // Remove o outline padrão ao focar no input
+      }
+      
+}
+
+.btn {
+
+    //muda o que ta escrito dentro do botão
+    margin-top: 15px;
+    color: #ffffff;
+    width: 230px;
+    height: 30px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 15pt;
+
+    border: 3px solid rgb(211, 84, 177);
+
+}
+
+#btn-entrar{
+    background-color: #ed4a40;
+    border: 3px solid rgb(146, 112, 230);
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+h2{
+    text-align: center;
+}
+
+.label{
+    color: #5a5a5b;
+    text-align: center;
+
+}
+
+.link-cadastrar {
+    color: rgb(27, 27, 27);
+}
+
+.link-cadastrar:hover {
+    color: #2E80AF; /* Altera a cor quando o mouse passa sobre o link */
+
+    
+}
+
+.google{
+    //display: grid;
+    //grid-template-columns: repeat(2,1fr);
+    //gap: 3; /* Espaço entre os elementos */
+    //align-items: center; /* Alinha verticalmente os itens no centro */
+    //justify-items: center;
+
+
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #404040;
+    color: #5b5b5b;
+    
+    padding: 8px 15px;    
+    font-size: 12px;
+
+    width: 130px;
+    height: 5px;
+
+    border: 1px solid #5b5b5b;
+    border-radius: 40px;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
