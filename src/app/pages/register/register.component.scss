@@ -1,25 +1,30 @@
 .container {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
-    padding: 50px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+    padding: 30px;
+    background-color: rgba(236, 236, 236, 0.98);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .form-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .btn-container{    
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
+    padding: 10px;
     align-items: center;
     flex-grow: 1;
-    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
 }
 
 .alert-container{
@@ -29,27 +34,62 @@
 }
 
 .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control{
+    width: 350px;
+    height: 5px;
+    padding: 15px;
+    border: 0;
+    border-radius: 30px;
+    background-color: rgba(175, 175, 175, 0.7);
+    
+    font-size: 11pt;
+
+    
+    
+      &:focus {
+        outline: none; // Remove o outline padrão ao focar no input
+      }
+      
 }
 
 .btn {
+    margin-top: 15px;
     color: #ffffff;
-    width: 150px;
-    height: 50px;
+    width: 170px;
+    height: 30px;
     border: 0;
+    border-radius: 30px;
     margin: 5px;
     cursor: pointer;
+    font-size: 15pt;
 }
 
 #btn-voltar{
-background-color: red;
+    background-color: #ed4a40;
 }
 
 #btn-cadastrar{
-    background-color: rgb(9, 49, 150);
+    background-color: #2e80af;
 }
 
 .alert {
     margin-top: 20px;
+}
+
+h2{
+    text-align: center;
 }

@@ -1,17 +1,17 @@
 <div class="container">
   <div class="form-container">
     <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
-      <h2>Cadastro</h2>
+      <h2>Crie sua conta</h2>
       <div class="form-group">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" formControlName="nome" class="form-control" />
+        <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Ex: Pedro Alvares Cabral"/>
         <div *ngIf="clientForm.get('nome')?.invalid && clientForm.get('nome')?.touched" class="text-danger">
           O nome é obrigatório.
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" class="form-control" />
+        <input type="email" id="email" formControlName="email" class="form-control" placeholder="Ex: pedrao@gmail.com"/>
         <div *ngIf="clientForm.get('email')?.invalid && clientForm.get('email')?.touched" class="text-danger">
           Insira um e-mail válido (Ex: usuário&#64;gmail.com).
         </div>
@@ -24,18 +24,19 @@
           formControlName="telefone"
           class="form-control"
           maxlength="11" minlength="11"
-          placeholder="Apenas números" />
+          placeholder="Ex: 11998765432" />
         <div *ngIf="clientForm.get('telefone')?.invalid && clientForm.get('telefone')?.touched" class="text-danger">
-          O telefone é obrigatório e deve ter 11 caracteres (11988887777).
+          O telefone é obrigatório e deve ter 11 caracteres.
         </div>
       </div>
       <div class="form-group">
         <label for="senha">Senha:</label>
         <input
-          type="text"
+          type="password"
           id="senha"
           formControlName="senha"
-          class="form-control" />
+          class="form-control"
+          placeholder="**************"/>
         <div *ngIf="clientForm.get('senha')?.invalid && clientForm.get('senha')?.touched" class="text-danger">
           Informe a senha.
         </div>
@@ -43,10 +44,11 @@
       <div class="form-group">
         <label for="confirmarSenha">Confirme a senha:</label>
         <input
-          type="text"
+          type="password"
           id="confirmarSenha"
           formControlName="confirmarSenha"
-          class="form-control" />
+          class="form-control"
+          placeholder="**************" />
         <div *ngIf="clientForm.get('confirmarSenha')?.invalid 
             && clientForm.get('confirmarSenha')?.touched 
             && clientForm.get('confirmarSenha') !== clientForm.get('senha')" 
