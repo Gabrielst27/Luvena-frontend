@@ -1,65 +1,45 @@
-<div class="container">
-    <div class="form-container">
-      <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
-        <h2>Entre na sua Conta</h2>
+<header></header>
 
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" formControlName="email" class="form-control" placeholder="Ex: pedrao@gmail.com"/>
-          <div *ngIf="clientForm.get('email')?.invalid && clientForm.get('email')?.touched" class="text-danger">
-            Insira um e-mail válido (Ex: usuário&#64;gmail.com).
-          </div>
-        </div>
-                
-        <div class="form-group">
-          <label for="confirmarSenha">Confirme a senha:</label>
-          <input
-            type="password"
-            id="confirmarSenha"
-            formControlName="confirmarSenha"
-            class="form-control"
-            placeholder="**************" />
-          <div *ngIf="clientForm.get('confirmarSenha')?.invalid 
-              && clientForm.get('confirmarSenha')?.touched 
-              && clientForm.get('confirmarSenha') !== clientForm.get('senha')" 
-              class="text-danger">
-              A senha é diferente da senha informada.
-          </div>
-        </div>
-        
-        <div class="btn-container">         
-          <button class="btn" id="btn-entrar">
-            <a href="/home">Entrar</a>
-          </button>
-        </div>
-                
-        <div class="label">
-          <p>Não tem conta? <a href="/home" class="link-cadastrar">Cadastrar</a></p>        
-        </div>
-      
-        <div class="google-container">
-
-          <div class="google">
-            <img src="/img/loginGoogle.png" alt="Faça login com Google"  class="google-icon">
-            <p>Login com Google</p>
-          </div>
-
-        </div>
-        
-        
-      
-
-
-
-      
-      </form>
+<section>
+  <div class="content-container">
+    <div class="content">
+      <h1>Preencha ao lado com seu e-mail e</h1>
+      <h1>senha para entrar</h1>
     </div>
-  
-    <div class="alert-container">
-      <div *ngIf="mensagem" class="alert alert-success mt-3">
-        {{ mensagem }}
-      </div>
-    </div>
-    
   </div>
-  
+
+  <div class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="informations">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" id="email" />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <small *ngIf="loginForm.get('email')?.errors?.['required']">O e-mail é obrigatório</small>
+          <small *ngIf="loginForm.get('email')?.errors?.['email']">Formato de email inválido</small>
+        </div>
+      </div>
+
+      <div class="informations">
+        <label for="senha">Senha</label>
+        <input type="password" formControlName="senha" id="senha" />
+        <div *ngIf="loginForm.get('senha')?.invalid && loginForm.get('senha')?.touched">
+          <small *ngIf="loginForm.get('senha')?.errors?.['required']">A senha é obrigatória</small>
+        </div>
+      </div>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div class="to-register">
+      <p>Não tem uma conta?</p>
+      <a href="/register">Cadastrar</a>
+    </div>
+
+    <div class="to-another">
+      <img src="/icons/loginGoogle.png" alt="Fazer login com Google">
+      <p>Entrar com Google</p>
+    </div>
+  </div>
+</section>
+
+<footer></footer>

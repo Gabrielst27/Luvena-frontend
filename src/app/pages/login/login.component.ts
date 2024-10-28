@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,33 +10,32 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+  public loginForm: FormGroup;
 
-  mensagem: string = '';
-  clientForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.clientForm = this.fb.group({      
-      email: ['', [Validators.required, Validators.email]],      
-      senha: ['', Validators.required],      
+  constructor(private fb: FormBuilder, private router: Router){
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      senha: ['', Validators.required]
     });
   }
 
-  onBackButton(){
-    this.router.navigate(['/home']);
+  ngOnInit(): void {
+    
   }
 
+  onSubmit(){
+    const formData = this.loginForm.value;
+    console.log("dados: ", formData);
 
-  onSubmit() {
-    if (this.clientForm.valid) {
-      console.log('Bem vindo!!!', this.clientForm.value);      
-      
+    if(this.loginForm.valid){
       setTimeout(() => {
-        this.router.navigate(['home']);
-      }, 2500);
+        this.router.navigate(['/home'])
+      }, 200)
     }
-    if (!this.clientForm.valid) {
-      this.mensagem = 'Preencha todos os dados corretamente' 
+
+    else{
+      this.loginForm.markAllAsTouched();
     }
   }
 }

@@ -1,21 +1,28 @@
-.container {
-    width: 100%;
+html, body{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 5fr 9fr;
-    position: relative; /* Para que o botão seja posicionado em relação ao contêiner */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-button {
-    position: absolute; /* Permite posicionar o botão */
-    top: 0px; /* Distância do topo */
-    right: 0px; /* Distância do lado direito */
-    width: 90px; /* Largura do botão */
-    height: 120px; /* Altura do botão */
-    padding: 0; /* Remove o preenchimento interno */
-    border: none; /* Remove a borda padrão */
-    background-color: blue; /* Cor de fundo */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+app-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer{
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+
+    background-color: #e0e0e0;
+    padding: 10px;
+    font-size: 10pt;
 }

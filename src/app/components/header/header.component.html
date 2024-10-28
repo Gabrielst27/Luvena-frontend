@@ -1,5 +1,4 @@
-<aside>
-    <div class="container">
-        <img src="img/perfil.png" alt="">
-    </div>
-</aside>
+<div class="container" [ngClass]="{
+    'background-home': currentPage === '/home' || currentPage === '/'
+}">
+</div>

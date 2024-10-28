@@ -1,5 +1,12 @@
-<div class="container" *ngIf="!hide()">
-    <app-header></app-header>
+<header>
     <app-menu></app-menu>
-</div>
-<router-outlet />
+    <app-header *ngIf="!hide()"></app-header>
+</header>
+
+<section>
+    <router-outlet />
+</section>
+
+<footer>
+    <p>Copyright &copy; 2024 Luvena</p>
+</footer>
