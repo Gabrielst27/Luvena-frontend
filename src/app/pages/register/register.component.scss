@@ -1,95 +1,171 @@
-.container {
-    max-width: 450px;
-    margin: 0 auto;
-    margin-top: 100px;
-    padding: 30px;
-    background-color: rgba(236, 236, 236, 0.98);
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+small{
+    color: red;
 }
 
-.form-container{
+section{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    gap: 50px;
+
+    .container{
+        padding: 150px;
+
+        h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            width: 95%;
+            padding-bottom: 20px;
+        }
     
-}
-
-.btn-container{    
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
-    flex-grow: 1;
-    margin-top: 15px;
-    margin-bottom: 15px;
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
     
-}
+            padding: 50px;
+            background-color: white;
 
-.alert-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            .btn-add-photo{
+                margin-top: -140px;
+                // border: 1px solid rgb(158, 158, 158, 0.7);
+                width: 150px;
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    //align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                .img-perfil{
+                    border-radius: 100%;
+                    box-shadow: 1px 1px 35px 1px;
+                    width: 100%;
+                }
+
+                button{
+                    cursor: pointer;
+                    margin: -55px;
+                    margin-top: 40px;
+                    border: 0;
+                    border-radius: 10px;
+                    background-color: var(--secondary);
+                    color: white;
+                    padding: 6px;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    img{
+                        width: 10px;
+                        color: white;
+                        background-color: white;
+                    }
+                }
+            }
     
-}
-
-label{
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-control{
-    width: 350px;
-    height: 5px;
-    padding: 15px;
-    border: 0;
-    border-radius: 30px;
-    background-color: rgba(175, 175, 175, 0.7);
+            form{
+                padding: 10px;
+                display: flex;
+                gap: 20px;
     
-    font-size: 11pt;
-
+                .informations{
+                    margin-bottom: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 300px;
+                    
+                    label{
+                        margin-left: 5px;
+                    }
     
+                    input{
+                        margin-top: 1px;
+                        padding: 15px;
+                        height: 10px;
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                        border-radius: 10px;
+                        box-shadow: 0.1px 0.1px 1px;
+                    }
+                }
     
-      &:focus {
-        outline: none; // Remove o outline padrão ao focar no input
-      }
-      
-}
-
-.btn {
-    margin-top: 15px;
-    color: #ffffff;
-    width: 170px;
-    height: 30px;
-    border: 0;
-    border-radius: 30px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 15pt;
-}
-
-#btn-voltar{
-    background-color: #ed4a40;
-}
-
-#btn-cadastrar{
-    background-color: #2e80af;
-}
-
-.alert {
-    margin-top: 20px;
-}
-
-h2{
-    text-align: center;
+                button{
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 42px;
+                    border: 0;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    background-color: var(--primary);
+                    color: white;
+                    font-size: 14pt;
+                    text-decoration: solid;
+                }
+            }
+    
+            .to-register{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+    
+                text-align: center;
+    
+                p{
+                    color: gray;
+                }
+    
+                a{
+                    text-decoration: none;
+                    color: rgb(0, 115, 255);
+                }
+            }
+    
+            .separator {
+                display: flex;
+                align-items: center;
+                width: 100%; /* Garante que o separador ocupe a largura total do contêiner */
+                text-align: center;
+                margin: 20px 0;
+              }
+              
+              .separator p {
+                flex-shrink: 0; /* Garante que o texto "Ou" não encolha */
+                padding: 0 10px; /* Espaço ao redor da palavra "Ou" */
+                background-color: white; /* Cor de fundo para "Ou", opcional */
+              }
+              
+              .separator::before,
+              .separator::after {
+                content: '';
+                flex-grow: 1;
+                border-top: 1px solid #505050; /* Define a linha como sólida */
+                margin: 0 10px; /* Espaçamento entre a linha e o texto */
+              }
+    
+            .to-another{
+                margin-top: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+    
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
 }

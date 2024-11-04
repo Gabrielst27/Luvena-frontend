@@ -1,72 +1,116 @@
-<div class="container">
-  <div class="form-container">
-    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
-      <h2>Crie sua conta</h2>
-      <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Ex: Pedro Alvares Cabral"/>
-        <div *ngIf="clientForm.get('nome')?.invalid && clientForm.get('nome')?.touched" class="text-danger">
-          O nome é obrigatório.
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" class="form-control" placeholder="Ex: pedrao@gmail.com"/>
-        <div *ngIf="clientForm.get('email')?.invalid && clientForm.get('email')?.touched" class="text-danger">
-          Insira um e-mail válido (Ex: usuário&#64;gmail.com).
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="telefone">Telefone:</label>
-        <input 
-          type="text"
-          id="telefone"
-          formControlName="telefone"
-          class="form-control"
-          maxlength="11" minlength="11"
-          placeholder="Ex: 11998765432" />
-        <div *ngIf="clientForm.get('telefone')?.invalid && clientForm.get('telefone')?.touched" class="text-danger">
-          O telefone é obrigatório e deve ter 11 caracteres.
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="senha">Senha:</label>
-        <input
-          type="password"
-          id="senha"
-          formControlName="senha"
-          class="form-control"
-          placeholder="**************"/>
-        <div *ngIf="clientForm.get('senha')?.invalid && clientForm.get('senha')?.touched" class="text-danger">
-          Informe a senha.
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="confirmarSenha">Confirme a senha:</label>
-        <input
-          type="password"
-          id="confirmarSenha"
-          formControlName="confirmarSenha"
-          class="form-control"
-          placeholder="**************" />
-        <div *ngIf="clientForm.get('confirmarSenha')?.invalid 
-            && clientForm.get('confirmarSenha')?.touched 
-            && clientForm.get('confirmarSenha') !== clientForm.get('senha')" 
-            class="text-danger">
-            A senha é diferente da senha informada.
-        </div>
-      </div>
-      
-      <div class="btn-container">
-        <button class="btn" id="btn-voltar" (click)="onBackButton()">Voltar</button>
-        <button class="btn" id="btn-cadastrar" type="submit">Cadastrar</button>
-      </div>
-    </form>
-  </div>
+<header></header>
 
-  <div class="alert-container">
-    <div *ngIf="mensagem" class="alert alert-success mt-3">
-      {{ mensagem }}
+<section>
+  <div class="container">
+    <div class="form-container">
+      <figure class="btn-add-photo">
+        <img class="img-perfil" src="\img\perfil.png" alt="Foto de perfil" />
+        <button><img src="\icons\add.png" alt="" /> Adicionar foto</button>
+      </figure>
+      <h1>Crie sua conta</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="col1">
+          <div class="informations">
+            <label for="nome">Nome</label>
+            <input type="text" formControlName="nome" id="nome" />
+            <div
+              *ngIf="
+                loginForm.get('nome')?.invalid && loginForm.get('nome')?.touched
+              "
+            >
+              <small *ngIf="loginForm.get('nome')?.errors?.['required']"
+                >O nome é obrigatório</small
+              >
+            </div>
+          </div>
+
+          <div class="informations">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" id="email" />
+            <div
+              *ngIf="
+                loginForm.get('email')?.invalid &&
+                loginForm.get('email')?.touched
+              "
+            >
+              <small *ngIf="loginForm.get('email')?.errors?.['required']"
+                >O e-mail é obrigatório</small
+              >
+              <small *ngIf="loginForm.get('email')?.errors?.['email']"
+                >Formato de email inválido</small
+              >
+            </div>
+          </div>
+
+          <div class="informations">
+            <label for="telefone">Telefone</label>
+            <input type="text" formControlName="telefone" id="telefone" />
+            <div
+              *ngIf="
+                loginForm.get('telefone')?.invalid &&
+                loginForm.get('telefone')?.touched
+              "
+            >
+              <small *ngIf="loginForm.get('telefone')?.errors?.['required']"
+                >O telefone é obrigatório</small
+              >
+              <small *ngIf="loginForm.get('telefone')?.errors?.['minLegth']"
+                >O telefone deve ter no mínimo 11 caracteres</small
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col2">
+          <div class="informations">
+            <label for="senha">Senha</label>
+            <input type="password" formControlName="senha" id="senha" />
+            <div
+              *ngIf="
+                loginForm.get('senha')?.invalid &&
+                loginForm.get('senha')?.touched
+              "
+            >
+              <small *ngIf="loginForm.get('senha')?.errors?.['required']"
+                >A senha é obrigatória</small
+              >
+            </div>
+          </div>
+
+          <div class="informations">
+            <label for="confirmarSenha">Confirmar senha</label>
+            <input
+              type="password"
+              formControlName="confirmarSenha"
+              id="confirmarSenha"
+            />
+            <div
+              *ngIf="
+                loginForm.get('confirmarSenha')?.invalid &&
+                loginForm.get('confirmarSenha')?.touched
+              "
+            >
+              <small
+                *ngIf="loginForm.get('confirmarSenha')?.errors?.['required']"
+                >Confirme a senha</small
+              >
+            </div>
+          </div>
+
+          <button type="submit">Criar Conta</button>
+        </div>
+      </form>
+
+      <div class="separator">
+        <p>Ou</p>
+      </div>
+
+      <div class="to-another">
+        <img src="/icons/loginGoogle.png" alt="Fazer login com Google" />
+        <p>Entrar com Google</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<footer></footer>

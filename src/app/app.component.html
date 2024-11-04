@@ -1,12 +1,15 @@
 <header>
-    <app-menu></app-menu>
-    <app-header *ngIf="!hide()"></app-header>
+  <app-menu></app-menu>
 </header>
 
-<section>
-    <router-outlet />
+<section
+  [ngClass]="{
+    'background-home': currentPage === '/register' || currentPage === '/login'
+  }"
+>
+  <router-outlet />
 </section>
 
 <footer>
-    <p>Copyright &copy; 2024 Luvena</p>
+  <p>Copyright &copy; 2024 Luvena</p>
 </footer>

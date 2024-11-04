@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,33 +13,29 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router){
+  constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', Validators.required]
+      senha: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  onSubmit(){
+  onSubmit() {
     const formData = this.loginForm.value;
-    console.log("dados: ", formData);
+    console.log('dados: ', formData);
 
-    if(this.loginForm.valid){
+    if (this.loginForm.valid) {
       setTimeout(() => {
-        this.router.navigate(['/home'])
-      }, 200)
-    }
-
-    else{
+        this.router.navigate(['/home'], { replaceUrl: true });
+      }, 200);
+    } else {
       this.loginForm.markAllAsTouched();
     }
   }

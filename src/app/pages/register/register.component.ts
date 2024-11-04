@@ -1,53 +1,44 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-register',
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss',
-  imports: [ReactiveFormsModule, CommonModule]
+  styleUrl: './register.component.scss'
 })
-export class RegisterComponent {
-  mensagem: string = '';
-  clientForm: FormGroup;
+export class RegisterComponent implements OnInit{
+  public loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.clientForm = this.fb.group({
+  constructor(private fb: FormBuilder, private router: Router){
+    this.loginForm = this.fb.group({
       nome: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      telefone: ['', Validators.required],
+      telefone: ['', Validators.required, Validators.minLength(11), Validators.maxLength(11)],
       senha: ['', Validators.required],
-      confirmarSenha:  ['', Validators.required]
-    }, { validator: this.passwordMatchValidator });
+      confirmarSenha: ['', Validators.required]
+    });
   }
 
-  onBackButton(){
-    this.router.navigate(['/home']);
+  ngOnInit(): void {
+    
   }
 
-  passwordMatchValidator(form: AbstractControl): { [key: string]: boolean } | null {
-    const senha = form.get('senha')?.value;
-    const confirmarSenha = form.get('confirmarSenha')?.value;
-    if (senha !== confirmarSenha) {
-      return { 'mismatch': true };
-    }
-    return null;
-  }
+  onSubmit(){
+    const formData = this.loginForm.value;
+    console.log("dados: ", formData);
 
-  onSubmit() {
-    if (this.clientForm.valid) {
-      console.log('Formulário enviado com sucesso', this.clientForm.value);
-      this.mensagem = 'Cadastro concluído com sucesso!'
-      
+    if(this.loginForm.valid){
       setTimeout(() => {
-        this.router.navigate(['home']);
-      }, 700);
+        this.router.navigate(['/home'])
+      }, 200)
     }
-    if (!this.clientForm.valid) {
-      this.mensagem = 'Preencha todos os dados corretamente' 
+
+    else{
+      this.loginForm.markAllAsTouched();
     }
   }
 }
