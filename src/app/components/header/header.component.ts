@@ -6,7 +6,7 @@ import { filter } from 'rxjs';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgClass],
+  imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
