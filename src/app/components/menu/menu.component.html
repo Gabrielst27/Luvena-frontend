@@ -5,15 +5,18 @@
 
   <nav class="navbar">
     <ul class="menu">
-      <a href="/home">Início</a>
-      <a href="#sobrenos">Sobre nós</a>
-      <a href="#contato">Contatos</a>
+      <a [routerLink]="['/home']">Início</a>
+      <a [routerLink]="['/home']">Agende um horário</a>
+      <a [routerLink]="['/home']">Contatos</a>
     </ul>
   </nav>
 
   <div class="perfil">
-    <a href="/login">Entrar</a>
-    <p>ou</p>
-    <a href="/register">Cadastrar</a>
+    <img src="/icons/perfil.svg" alt="" />
+    <div class="register-container">
+      <a href="/login">Entrar</a>
+      <p>ou</p>
+      <a href="/register">Cadastrar</a>
+    </div>
   </div>
 </div>

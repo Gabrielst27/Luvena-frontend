@@ -19,16 +19,16 @@ section{
             width: 95%;
             padding-bottom: 20px;
         }
-    
+
         .form-container{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            
+
             border: 1px solid rgba(0, 0, 0, 0.3);
             border-radius: 20px;
-    
+
             padding: 50px;
             background-color: white;
 
@@ -45,6 +45,7 @@ section{
                     border-radius: 100%;
                     box-shadow: 1px 1px 35px 1px;
                     width: 100%;
+                    background-color: var(--secondary);
                 }
 
                 button{
@@ -68,22 +69,22 @@ section{
                     }
                 }
             }
-    
+
             form{
                 padding: 10px;
                 display: flex;
                 gap: 20px;
-    
+
                 .informations{
                     margin-bottom: 20px;
                     display: flex;
                     flex-direction: column;
                     width: 300px;
-                    
+
                     label{
                         margin-left: 5px;
                     }
-    
+
                     input{
                         margin-top: 1px;
                         padding: 15px;
@@ -93,7 +94,7 @@ section{
                         box-shadow: 0.1px 0.1px 1px;
                     }
                 }
-    
+
                 button{
                     margin-top: 20px;
                     width: 100%;
@@ -107,26 +108,26 @@ section{
                     text-decoration: solid;
                 }
             }
-    
+
             .to-register{
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
                 gap: 10px;
-    
+
                 text-align: center;
-    
+
                 p{
                     color: gray;
                 }
-    
+
                 a{
                     text-decoration: none;
                     color: rgb(0, 115, 255);
                 }
             }
-    
+
             .separator {
                 display: flex;
                 align-items: center;
@@ -134,13 +135,13 @@ section{
                 text-align: center;
                 margin: 20px 0;
               }
-              
+
               .separator p {
                 flex-shrink: 0; /* Garante que o texto "Ou" não encolha */
                 padding: 0 10px; /* Espaço ao redor da palavra "Ou" */
                 background-color: white; /* Cor de fundo para "Ou", opcional */
               }
-              
+
               .separator::before,
               .separator::after {
                 content: '';
@@ -148,7 +149,7 @@ section{
                 border-top: 1px solid #505050; /* Define a linha como sólida */
                 margin: 0 10px; /* Espaçamento entre a linha e o texto */
               }
-    
+
             .to-another{
                 margin-top: 10px;
                 border: 1px solid rgba(0, 0, 0, 0.3);
@@ -160,7 +161,7 @@ section{
                 gap: 10px;
                 padding-left: 10px;
                 padding-right: 10px;
-    
+
                 img{
                     width: 20px;
                     height: 20px;

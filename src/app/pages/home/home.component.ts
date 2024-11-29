@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { MenuComponent } from '../../components/menu/menu.component';
 import { HeaderComponent } from '../../components/header/header.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  contact = {
+    name: '',
+    email: '',
+    message: '',
+  };
+
+  public onSubmit() {
+    console.log('acionou onSubmit');
+  }
+}

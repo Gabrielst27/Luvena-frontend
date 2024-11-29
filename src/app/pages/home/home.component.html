@@ -2,6 +2,93 @@
   <app-header></app-header>
 </header>
 
-<section>
+<section id="start">
   <div class="container"></div>
+</section>
+
+<section id="about-us">
+  <div class="container">
+    <h2 class="section-title">Sobre Nós</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Na nossa barbearia, acreditamos que o cuidado com o visual vai além de
+          um simples corte de cabelo ou barba. É sobre confiança, estilo e a
+          experiência única que oferecemos a cada cliente que entra pelas nossas
+          portas.
+        </p>
+        <p>
+          Com uma equipe de profissionais experientes e apaixonados pelo que
+          fazem, nos dedicamos a proporcionar o melhor atendimento, com cortes
+          modernos, clássicos e personalizados, além de serviços de barba e
+          cuidados especiais.
+        </p>
+        <p>
+          Usamos apenas produtos de alta qualidade para garantir que você se
+          sinta bem durante e após a experiência conosco. Cada cliente é tratado
+          como único, e a nossa missão é deixá-lo pronto para enfrentar o mundo
+          com estilo e confiança.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/img/fundoAboutUs.png" alt="Imagem da barbearia" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="contact-container">
+  <div class="contact-header">
+    <h1>Entre em Contato</h1>
+    <p>Se você tem alguma dúvida ou sugestão, ficaremos felizes em ajudar!</p>
+  </div>
+
+  <form class="contact-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="contact.name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="contact.email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Mensagem</label>
+      <textarea
+        id="message"
+        name="message"
+        [(ngModel)]="contact.message"
+        required
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="submit-btn"
+      [disabled]="!contact.name || !contact.email || !contact.message"
+    >
+      Enviar
+    </button>
+  </form>
+
+  <div class="contact-info">
+    <h2>Ou entre em contato diretamente</h2>
+    <p>Endereço: Rua Exemplo, 123, Centro</p>
+    <p>Telefone: (11) 1234-5678</p>
+    <p>E-mail: contato&#64;exemplo.com</p>
+  </div>
 </section>

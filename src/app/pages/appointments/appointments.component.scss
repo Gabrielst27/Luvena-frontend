@@ -1,78 +1,107 @@
-:root{
-    background-image: url('/img/fundoAppointments.jpg') !important;
+/* Header */
+.appointments-header {
+  background-color: var(--secondary); /* Cor de fundo verde */
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+
+  .header-content {
+    max-width: 900px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+  }
 }
 
-header{
-    padding-top: 100px;
+/* Section */
+.appointments-section {
+  padding: 30px;
+  background-color: #f9f9f9;
+  min-height: 50vh;
+}
 
-    .header {
-        text-align: center;
-        margin-bottom: 20px;
-    
-        h1 {
-          font-size: 24px;
-          color: #000000;
-        }
-    
-        .subtitle {
-          font-size: 16px;
-          color: #5f5f5f;
-        }
+/* Container de agendamentos */
+.appointments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cartão de agendamento */
+.appointment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .appointment-time {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    padding-right: 20px;
+  }
+
+  .appointment-details {
+    flex-grow: 1;
+    text-align: left;
+    h3 {
+      margin: 5px 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+
+  .appointment-actions {
+    display: flex;
+    gap: 10px;
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+
+      &:hover {
+        background-color: var(--primary);
       }
-}
+    }
 
-section{
-    padding-bottom: 30px;
+    .btn-secondary {
+      background-color: #f1f1f1;
+      color: #333;
 
-    .appointments-container {
-        padding: 20px;
-        max-width: 800px;
-        margin: 0 auto;
-        background-color: var(--secondary);
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      
-        
-      
-        .appointments-list {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-      
-          .appointment-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-      
-            .appointment-time {
-              font-size: 16px;
-              font-weight: bold;
-              color: var(--primary);
-              margin-bottom: 10px;
-            }
-      
-            .appointment-details {
-              h3 {
-                font-size: 18px;
-                margin: 0;
-                color: #333;
-              }
-      
-              p {
-                font-size: 14px;
-                color: #555;
-                margin: 5px 0;
-              }
-      
-              strong {
-                color: #333;
-              }
-            }
-          }
-        }
+      &:hover {
+        background-color: #e1e1e1;
       }
+    }
+  }
 }
-  

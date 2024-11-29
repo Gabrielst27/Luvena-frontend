@@ -17,12 +17,22 @@
         display: flex;
         align-items: center;
         gap: 15px;
+
+        h1{
+          color: var(--primary);
+        }
     }
 
     .perfil{
         margin-right: 30px;
-        p{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .register-container{
+          p{
             margin: 0;
+        }
         }
     }
 
@@ -32,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             margin: 0;
-            
+
             a{
                 text-decoration: none;
 
@@ -46,6 +56,6 @@
                 background-color: rgb(192, 150, 71);
             }
         }
-    }    
+    }
 }
 
