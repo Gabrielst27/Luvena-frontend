@@ -12,7 +12,7 @@
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--primary);
+    color: var(--tertiary);
     margin-bottom: 30px;
   }
 
@@ -115,7 +115,7 @@
 
 .submit-btn {
   padding: 10px 20px;
-  background-color: var(--primary);
+  background-color: var(--tertiary);
   color: white;
   border: none;
   border-radius: 5px;
@@ -124,7 +124,7 @@
 }
 
 .submit-btn:hover {
-  background-color: var(--primary);
+  background-color: var(--tertiary);
 }
 
 .contact-info {

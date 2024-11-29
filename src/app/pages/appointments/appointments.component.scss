@@ -1,6 +1,6 @@
 /* Header */
 .appointments-header {
-  background-color: var(--secondary); /* Cor de fundo verde */
+  background-color: var(--quaternary); /* Cor de fundo verde */
   color: #fff;
   padding: 50px;
   text-align: center;
@@ -87,11 +87,11 @@
     }
 
     .btn-primary {
-      background-color: var(--primary);
+      background-color: var(--tertiary);
       color: white;
 
       &:hover {
-        background-color: var(--primary);
+        background-color: var(--tertiary);
       }
     }
 
