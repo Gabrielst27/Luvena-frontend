@@ -1,5 +1,43 @@
-:root{
-    --primary: #B79145;
+:root {
+    /* Cores principais */
+    --primary: #ED4A40; 
+    --secondary: #2E80AF; 
+    --tertiary: #B79145; 
+    --quaternary: #191D20; 
 
-    --secondary: #1B1717;
+    /* Cores secundárias derivadas (tons mais claros e mais escuros) */
+    --primary-light: #F2756A; 
+    --primary-dark: #B83834; 
+
+    --secondary-light: #5CA1C5; 
+    --secondary-dark: #205C7A; 
+
+    --tertiary-light: #C9A663; 
+    --tertiary-dark: #8A7033; 
+
+    --quaternary-light: #33393F; 
+    --quaternary-dark: #0F1113; 
+}
+
+/* Modo Noturno */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Ajustes para modo noturno */
+        --primary: #B83834;
+        --secondary: #205C7A;
+        --tertiary: #8A7033;
+        --quaternary: #0F1113;
+
+        --primary-light: #ED4A40;
+        --primary-dark: #802A26; 
+
+        --secondary-light: #2E80AF; 
+        --secondary-dark: #14445C; 
+
+        --tertiary-light: #B79145; 
+        --tertiary-dark: #604C24; 
+
+        --quaternary-light: #191D20; 
+        --quaternary-dark: #0A0C0D; 
+    }
 }
